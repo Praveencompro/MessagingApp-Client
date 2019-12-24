@@ -1,1 +1,5 @@
-<p>users-list works!</p>
+<div class="user-list-container-div">
+    <div *ngFor="let user of users" class="user-details-div" title="{{user.emailid}}" (click)="getUserMessages(user.emailid)">
+        {{user.firstname}} {{user.lastname}}
+    </div>
+</div>

@@ -1,0 +1,15 @@
+#app-header
+{
+    height:50px;
+    padding:10px;
+    background-color: rgb(121, 82, 179);
+    color: white;
+    font-size: large;
+    font-family: sans-serif;
+    line-height: 30px;
+}
+
+.logout-btn
+{
+    color: white;
+}

@@ -1,31 +1,55 @@
+<app-app-header></app-app-header>
 <div class="container">
-    <h1>Sign Up</h1>
-    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
-        <div class="form-group">
-            <label for="fname">First Name</label>
-            <input type="text" class="form-control" id="fname" required
-            [(ngModel)]="model.firstname" name="firstname">
+    <div class="row">
+        <div class="col" style="float: left; width:50%; border-right: 1px solid lightgray; padding:20px;">
+            <h1>Sign Up</h1>
+            <form (ngSubmit)="onSignup()" #signUpForm="ngForm">
+                <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input type="text" class="form-control" id="fname" required [(ngModel)]="model.firstname"
+                        name="firstname">
+                </div>
+
+                <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" class="form-control" id="lname" required [(ngModel)]="model.lastname"
+                        name="lastname">
+                </div>
+
+                <div class="form-group">
+                    <label for="emailid">Email ID</label>
+                    <input type="email" class="form-control" id="emailid" required email [(ngModel)]="model.emailid"
+                        name="emailid">
+                </div>
+
+                <div class="form-group">
+                    <label for="pwd">Password</label>
+                    <input type="text" class="form-control" id="pwd" required [(ngModel)]="model.password"
+                        name="password">
+                </div>
+
+                <button type="submit" [disabled]="!signUpForm.form.valid" class="btn btn-success">Sign Up</button>
+
+            </form>
         </div>
+        <div class="col" style="float: right; width:50%; padding:20px;">
+            <h1>Login</h1>
+            <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+                <div class="form-group">
+                    <label for="emailid">Email ID</label>
+                    <input type="email" class="form-control" id="emailid" required email [(ngModel)]="loginmodel.emailid"
+                        name="emailid">
+                </div>
 
-        <div class="form-group">
-            <label for="lname">Last Name</label>
-            <input type="text" class="form-control" id="lname" required
-            [(ngModel)]="model.lastname" name="lastname">
+                <div class="form-group">
+                    <label for="pwd">Password</label>
+                    <input type="text" class="form-control" id="pwd" required [(ngModel)]="loginmodel.password"
+                        name="password">
+                </div>
+
+                <button type="submit" [disabled]="!loginForm.form.valid" class="btn btn-success">Login</button>
+
+            </form>
         </div>
-
-        <div class="form-group">
-            <label for="emailid">Email ID</label>
-            <input type="email" class="form-control" id="emailid" required email
-            [(ngModel)]="model.emailid" name="emailid">
-        </div>
-
-        <div class="form-group">
-            <label for="pwd">Password</label>
-            <input type="text" class="form-control" id="pwd" required
-            [(ngModel)]="model.password" name="password">
-        </div>
-
-        <button type="submit" [disabled]="!loginForm.form.valid" class="btn btn-success">Submit</button>
-
-    </form>
+    </div>
 </div>
