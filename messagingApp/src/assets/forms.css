@@ -1,7 +1,7 @@
-.ng-touched.ng-valid[required], .ng-touched.ng-valid.required  {
+.formValidationEnabled .ng-touched.ng-valid[required], .ng-touched.ng-valid.required  {
   border: 1px solid #42A948; /* green */
 }
 
-.ng-touched.ng-invalid:not(form)  {
+.formValidationEnabled .ng-touched.ng-invalid:not(form)  {
   border: 1px solid #a94442; /* red */
 }

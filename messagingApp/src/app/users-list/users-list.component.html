@@ -1,5 +1,10 @@
 <div class="user-list-container-div">
-    <div *ngFor="let user of users" class="user-details-div" title="{{user.emailid}}" (click)="getUserMessages(user.emailid)">
-        {{user.firstname}} {{user.lastname}}
-    </div>
+    <input class="form-control" id="searchUserInput" type="text" placeholder="Search User.." (keyup)="filterUserList()"
+        [(ngModel)]="userInput">
+    <ul class="list-group" id="userList">
+        <li *ngFor="let user of filteredList" class="list-group-item user-details-li"
+            [ngClass]="{'active': selectedItem == user}" title="{{user.emailid}}" (click)="getUserMessages(user)">
+            {{user.firstname}} {{user.lastname}}
+        </li>
+    </ul>
 </div>

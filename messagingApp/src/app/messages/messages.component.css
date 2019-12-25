@@ -1,0 +1,42 @@
+.messages-container-div {
+    height: calc( 100vh - 110px );
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    overflow: auto;
+}
+
+.message-details-div {
+    margin-top: 2px;
+    border: 1px solid lightgray;
+    padding: 5px;
+    max-width: 90%;
+    border-radius: 5px;
+}
+
+.msg-sent
+{
+    align-self: flex-end;
+    background: #cfd8dc;
+}
+
+.msg-recieved
+{
+    align-self: flex-start;
+}
+
+.msg-time
+{
+    font-size: 10px;
+    color: grey;
+}
+
+.msg-sent .msg-time
+{
+    float: right;
+}
+
+.msg-recieved .msg-time
+{
+    float: left;
+}

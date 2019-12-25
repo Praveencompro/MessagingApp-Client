@@ -1,0 +1,22 @@
+.home-container-div{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+app-app-header
+{
+    width: 100%;
+}
+
+app-users-list
+{
+    width: 15%;
+}
+
+app-messages
+{
+    width: 85%;
+    padding: 5px 20px;
+}

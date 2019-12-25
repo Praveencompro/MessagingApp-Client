@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  senderEmailid:any;
+  recieverEmailid:any;
   constructor() { }
 
   ngOnInit() {
   }
-
+  getMessages(data) {
+    this.senderEmailid = data.senderEmailId;
+    this.recieverEmailid = data.recieverEmailId;
+  }
 }

@@ -1,0 +1,17 @@
+<div class="messages-container-div">
+    <div *ngFor="let messageObj of messages" class="message-details-div"
+        [ngClass]="(messageObj.sender==senderEmail)?'msg-sent':'msg-recieved'">
+        <div>{{messageObj.message}}</div>
+        <div class="msg-time">{{messageObj.timestamp | date:'medium'}}</div>
+    </div>
+    <div *ngIf="messages && messages.length == 0" class="message-placeholder-div">
+        <i>Start a chat now...</i>
+    </div>
+</div>
+<form *ngIf="senderEmail && recieverEmail" (ngSubmit)="sendMessage()" #messageForm="ngForm">
+    <div class="message-editor-div">
+        <input type="text" class="form-control" placeholder="Send a message" id="message-input" required
+            [(ngModel)]="messagemodel.message" name="message">
+        <button type="submit" style="display: none;" [disabled]="!messageForm.form.valid" class="btn btn-success">Send</button>
+    </div>
+</form>

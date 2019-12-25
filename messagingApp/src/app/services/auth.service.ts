@@ -19,7 +19,7 @@ export class AuthService {
         let jwttoken = response['jwttoken'];
         if (jwttoken) {
           localStorage.setItem('access_token', response['jwttoken']);
-          this.loggedinuser = userdata;
+          localStorage.setItem('emailid', userdata.emailid);
           let retObj = {
             status: 'success',
             response: response
@@ -48,8 +48,8 @@ export class AuthService {
       .then((response) => {
         let jwttoken = response['jwttoken'];
         if (jwttoken) {
-          this.loggedinuser = userdata;
           localStorage.setItem('access_token', response['jwttoken']);
+          localStorage.setItem('emailid', userdata.emailid);
           let retObj = {
             status: 'success',
             response: response
@@ -75,14 +75,18 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('access_token');
+    localStorage.removeItem('emailid');
   }
 
   public get isLoggedIn(): boolean {
     return (localStorage.getItem('access_token') !== null);
   }
 
-  public get getLoggedInUser(): any {
-    return this.loggedinuser;
+  public get getLoggedInUserEmailId(): any {
+    if (localStorage.getItem('access_token') !== null && localStorage.getItem('emailid') !== null) {
+      return localStorage.getItem('emailid');
+    }
+    else { return null; }
   }
 
 }

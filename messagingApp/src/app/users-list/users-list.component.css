@@ -1,16 +1,17 @@
 .user-list-container-div
 {
     padding:5px;
-    width: 15%;
+    overflow: auto;
+    height: calc( 100vh - 55px);
+    border-right: 1px solid lightgray;
+    width: 100%;
 }
 
-.user-details-div
+#searchUserInput {
+    margin-bottom: 5px;
+}
+
+.user-details-li
 {
-    padding: 2px;
-    font-size: 16px;
     cursor: pointer;
-}
-
-.user-details-div:hover{
-    background:lightgray;
 }

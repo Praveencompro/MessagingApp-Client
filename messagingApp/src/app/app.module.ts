@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
 import { JwtModule } from '@auth0/angular-jwt';
+import { MessagesComponent } from './messages/messages.component';
 // ...
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -23,7 +24,8 @@ export function tokenGetter() {
     UsersListComponent,
     LoginComponent,
     HomeComponent,
-    AppHeaderComponent
+    AppHeaderComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

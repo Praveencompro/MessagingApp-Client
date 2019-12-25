@@ -1,2 +1,5 @@
-<app-app-header></app-app-header>
-<app-users-list></app-users-list>
+<div class="home-container-div">
+    <app-app-header></app-app-header>
+    <app-users-list (onGetMessages)="getMessages($event)"></app-users-list>
+    <app-messages [senderEmail]="senderEmailid" [recieverEmail]="recieverEmailid"></app-messages>
+</div>

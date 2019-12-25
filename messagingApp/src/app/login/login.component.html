@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col" style="float: left; width:50%; border-right: 1px solid lightgray; padding:20px;">
             <h1>Sign Up</h1>
-            <form (ngSubmit)="onSignup()" #signUpForm="ngForm">
+            <form (ngSubmit)="onSignup()" #signUpForm="ngForm" class="formValidationEnabled">
                 <div class="form-group">
                     <label for="fname">First Name</label>
                     <input type="text" class="form-control" id="fname" required [(ngModel)]="model.firstname"
@@ -34,7 +34,7 @@
         </div>
         <div class="col" style="float: right; width:50%; padding:20px;">
             <h1>Login</h1>
-            <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+            <form (ngSubmit)="onLogin()" #loginForm="ngForm" class="formValidationEnabled">
                 <div class="form-group">
                     <label for="emailid">Email ID</label>
                     <input type="email" class="form-control" id="emailid" required email [(ngModel)]="loginmodel.emailid"
