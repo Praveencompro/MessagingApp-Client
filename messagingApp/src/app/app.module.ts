@@ -36,8 +36,8 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        whitelistedDomains: ['localhost:3000'],
-        blacklistedRoutes: ['localhost:3000/auth']
+        whitelistedDomains: ['quiet-gorge-93504.herokuapp.com'],
+        blacklistedRoutes: ['quiet-gorge-93504.herokuapp.com/auth']
       }
     })
   ],
