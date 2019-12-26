@@ -11,7 +11,7 @@
 <form *ngIf="senderEmail && recieverEmail" (ngSubmit)="sendMessage()" #messageForm="ngForm">
     <div class="message-editor-div">
         <input type="text" class="form-control" placeholder="Send a message" id="message-input" required
-            [(ngModel)]="messagemodel.message" name="message">
+            [(ngModel)]="messagemodel['message']" name="message">
         <button type="submit" style="display: none;" [disabled]="!messageForm.form.valid" class="btn btn-success">Send</button>
     </div>
 </form>
