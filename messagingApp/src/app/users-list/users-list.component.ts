@@ -14,21 +14,46 @@ export class UsersListComponent implements OnInit {
   selectedItem: any;
   userInput: any;
   filteredList: any;
+  loggedInUserEmailId: any;
+  loggedInUser: any;
 
   constructor(private authService: AuthService, private router: Router, private userService: UserService) { }
 
   ngOnInit() {
+
+    this.loggedInUserEmailId = this.authService.getLoggedInUserEmailId;
+
     this.userService.getUsers()
       .then((userslist) => {
-        this.users = userslist;
-        this.filteredList = userslist;
+        this.createFilteredUserList(userslist)
       })
+  }
+
+  createFilteredUserList(userslist) {
+    debugger;
+    if (userslist) {
+      this.filteredList = this.users = userslist.filter((value) => {
+        try {
+          if (value && value['emailid'] === this.loggedInUserEmailId) {
+            this.loggedInUser = value;
+            return false;
+          }
+          else {
+            return true;
+          }
+        }
+        catch
+        {
+          return false;
+        }
+      })
+    }
   }
 
   getUserMessages(user) {
     this.selectedItem = user;
     let recieverEmailId = user.emailid;
-    let senderEmailId = this.authService.getLoggedInUserEmailId;
+    let senderEmailId = this.loggedInUserEmailId;
     this.onGetMessages.emit({ senderEmailId, recieverEmailId });
   }
 
@@ -46,7 +71,7 @@ export class UsersListComponent implements OnInit {
               let em = value['emailid'].toLowerCase();
               return (fn.indexOf(searchString) !== -1 || ln.indexOf(searchString) !== -1 || em.indexOf(searchString) !== -1)
             }
-            else{
+            else {
               return false;
             }
           })

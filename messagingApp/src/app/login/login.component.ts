@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  model = new User('a', 'b', '2112b@p1', 'd');
+  model = new User('praveen', 'kumar', 'praveen.compro@gmail.com', 'random');
 
   onSignup() {
     this.authService.signup(this.model)
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
       })
   }
 
-  loginmodel = new User('al', 'bl', '2112b@pl1', 'dl');
+  loginmodel = new User('praveen', 'kumar', 'praveen.compro@gmail.com', 'random');
 
   onLogin() {
     this.authService.login(this.loginmodel)

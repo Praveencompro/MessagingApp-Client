@@ -7,6 +7,11 @@
     width: 100%;
 }
 
+.loggedInUserLI
+{
+    background: rgb(233, 232, 232);
+}
+
 #searchUserInput {
     margin-bottom: 5px;
 }
@@ -14,4 +19,9 @@
 .user-details-li
 {
     cursor: pointer;
+}
+
+.user-details-li:not(.active):hover
+{
+    background: lightgray;
 }
